@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: APIGatewayService
+
+server:
+  port: 6006
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+      waitTimeInMsWhenSyncEmpty: 0
+
+zuul:
+# All incoming services mapped to /apigateway URI
+  prefix: /apigateway
+  routes:
+   
+    stock-service:
+      path: /DomainService/**
+      url: http://localhost:6000
+      
+      

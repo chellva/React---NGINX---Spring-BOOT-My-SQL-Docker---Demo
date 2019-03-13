@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: DomainService
+
+server:
+  port: 6000
+
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:6006/
+  instance:
+    hostname: localhost
